@@ -12,6 +12,7 @@ from datetime import datetime
 import logging
 
 key = 'XXXXXXXThingspeakKEYXXXXXXXX'  # Thingspeak channel to update
+#definisco le durate di tempo e massimo spazio che possono occupare le registrazioni.
 
 MAX_FILES = 50
 DURATION = 20
@@ -50,7 +51,7 @@ def writeLog(entry, filename):
         csv.write(entry)
     finally:
         csv.close()
-        
+ # Tramite apposita seriale vado a parsare i dati ottenuti dal gps       
 def parseGPS(data, file_name_log):
 #    print "raw:", data #prints raw data
     if data[0:6] == "$GPRMC":
